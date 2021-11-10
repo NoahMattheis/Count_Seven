@@ -1,0 +1,20 @@
+/* Recursive method to return the number of sevens in any given non-negative int n */
+public int count7(int n) {
+  int count = 0;
+  String i = Integer.toString(n);
+  if (i.length() < 3) {
+    if (n / 10 == 7) {
+      count++;
+    }
+    if (n % 10 == 7) {
+      count++;
+    }
+  return count;
+  } else if (i.length() >= 3) {
+      if (n % 10 == 7) {
+        count++;
+      }
+    return count + count7(n/10);
+  }
+  return count;
+}
